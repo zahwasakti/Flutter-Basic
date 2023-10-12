@@ -17,27 +17,42 @@ String Status = "";
     return Scaffold(
       appBar: AppBar
       (title: const Text("Text Field Widget")),
-      body: Center(child: Column(children: [
-        Container(
-          child: Text(Status),),
-        TextField(
-          controller: _myText,
-          decoration: InputDecoration(
-            hintText: "Ubah Status",
-            border: OutlineInputBorder(),
-            suffixIcon: IconButton(onPressed: (){
-              _myText.clear();
-            }, icon: Icon(Icons.clear))
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Center(child: Column(children: [
+          SizedBox(
+            height: 15,),
+          Container(
+            child: Text(Status,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.italic,
+              color: Colors.green
+            ),),),
+            SizedBox(
+            height: 15,),
+          TextField(
+            controller: _myText, 
+            decoration: InputDecoration(
+              hintText: "Ubah Status",
+              border: OutlineInputBorder(),
+              suffixIcon: IconButton(onPressed: (){
+                _myText.clear();
+              }, icon: Icon(Icons.clear))
+            ),
           ),
+          SizedBox(
+            height: 25,),
+          MaterialButton(
+            onPressed: (){
+              setState(() {
+                Status = _myText.text;
+              });
+            }, color: Colors.blue, child: Text("Update Status", style: TextStyle(color: Colors.white),),)
+        ], 
         ),
-        MaterialButton(
-          onPressed: (){
-            setState(() {
-              Status = _myText.text;
-            });
-          }, color: Colors.blue, child: Text("Update Status", style: TextStyle(color: Colors.white),),)
-      ], 
-      ),
+        ),
       ),
     );
   }
