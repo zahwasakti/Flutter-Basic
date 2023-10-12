@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_project_1/widget/widget1.dart';
-import 'package:flutter_project_1/widget/widget2.dart';
+// import 'package:flutter_project_1/widget/widget2.dart';
+import 'package:flutter_project_1/widget/widget3.dart';
 
 //Flutter Project Zahwa
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
         useMaterial3: false,
       ),
-      home: WidgetButton(),
+      home: MyWidget(),
     );
   }
 }
